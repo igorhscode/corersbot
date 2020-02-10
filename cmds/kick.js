@@ -3,13 +3,13 @@ const fs = require("fs");
 let profile = require("../profile.json");
 module.exports.run = async (bot,message,args) => {
     try{
-      
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("У вас нет прав");
+      let em1 = message.guild.emojis.find(emoji => emoji.name === "animated_cross")
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${em1} У вас нет прав`);
     let rUser = bot.rUser;
-    if(!args[0]) return bot.send("Вы не указали пользователя");
-    if(!rUser) return bot.send("Пользователь не найден");
+    if(!args[0]) return bot.send(`${em1} Вы не указали пользователя`);
+    if(!rUser) return bot.send(`${em1} Пользователь не найден`);
     if(rUser.hasPermission("MANAGE_MESSAGES"))
-    return message.reply("нее... Вы не можете его исключить из сервера!");
+    return message.reply(`${em1} нее... Вы не можете его исключить из сервера!`);
     let embed = new Discord.RichEmbed()
     .setAuthor(message.guild.name, message.guild.iconURL)
     .setDescription("Кик")
