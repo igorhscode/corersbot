@@ -1,11 +1,12 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
 module.exports.run = async (bot,message,args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У вас нет прав");
+let em1 = message.guild.emojis.find(emoji => emoji.name === "animated_cross")
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`${em1} У вас нет прав`);
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!args[0]) return bot.send("Вы не указали пользователя");
-    if(!rUser) return bot.send("Пользователь не найден");
-    if(!args[1]) return bot.send("Укажите время в секундах");
+    if(!args[0]) return bot.send(`${em1} Вы не указали пользователя`);
+    if(!rUser) return bot.send(`${em1} Пользователь не найден`);
+    if(!args[1]) return bot.send(`${em1} Укажите время в секундах`);
     let embed = new Discord.RichEmbed()
     .setAuthor(message.guild.name, message.guild.iconURL)
     .setColor('#e22216')
@@ -29,8 +30,8 @@ module.exports.run = async (bot,message,args) => {
         });
     };
     if(rUser.hasPermission("MANAGE_MESSAGES"))
-    return message.reply("нее... Вы не можете дать ему мут!");
-    if(rUser.roles.has(role.id)) return bot.send("Этот пользователь уже не может говорить");
+    return message.reply(`${em1} нее... Вы не можете дать ему мут!`);
+    if(rUser.roles.has(role.id)) return bot.send(`${em1} Этот пользователь уже не может говорить`);
     bot.mutes[rUser.id] = {
         guild:message.guild.id,
         time:parseInt(Date.now() + (args[1]*1000)),
