@@ -6,14 +6,14 @@ module.exports.run = async (bot,message,args) =>{
         function send (msg){
             message.channel.send(msg);
         }
-
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("У вас нет прав");
+    let em1 = message.guild.emojis.find(emoji => emoji.name === "animated_cross")
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${em1} У вас нет прав`);
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
-    if(!args[0]) return send("Вы не указали пользователя");
-    if(!rUser) return send("Пользователь не найден");
+    if(!args[0]) return send(`${em1} Вы не указали пользователя`);
+    if(!rUser) return send(`${em1} Пользователь не найден`);
     if(rUser.hasPermission("MANAGE_MESSAGES"))
-    return message.reply("нее... Вы не можете дать ему игровое предупреждение!");
+    return message.reply(`${em1} нее... Вы не можете дать ему игровое предупреждение!`);
     profile[rUser.id].gamewarns++;
     fs.writeFile('../profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
