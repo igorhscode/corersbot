@@ -23,10 +23,10 @@ module.exports.run = async (bot,message,args) => {
     let embed = new Discord.RichEmbed()
     .setAuthor(argsUser.username)
     .setThumbnail(argsUser.avatarURL)
-    .setDescription(`${em2} 🌞 Монеты уменьшились!`)
+    .setDescription(`${em2} ☀️ Монеты уменьшились!`)
     .addField("Игрок", argsUser.username)
-    .addField(`Количество`, `${args[0]} 🌞 монет`)
-    .addField(`Баланс обновился`, `${bal} 🌞 монет`)
+    .addField(`Количество`, `${args[0]} ☀️ монет`)
+    .addField(`Баланс обновился`, `${bal} ☀️ монет`)
     .setColor("RED") // random = "RANDOM"
     .setFooter("Не забудь взять ежедневный бонус - sun!daily")
     .setTimestamp()
