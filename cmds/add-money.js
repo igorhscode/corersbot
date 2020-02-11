@@ -1,7 +1,6 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 module.exports.run = async (bot,message,args) => {
-    let em2 = message.guild.emojis.find(emoji => emoji.name === "yes")
     let em1 = message.guild.emojis.find(emoji => emoji.name === "animated_cross")
     if (!message.member.hasPermission('MANAGE_GUILD')) { // if message.author / member does not have the permission MANAGE_GUILD, return.
         return message.channels.send(`${em1} Вы не можете использовать эту команду!`).then(msg => {
@@ -12,6 +11,7 @@ module.exports.run = async (bot,message,args) => {
     }
 
     let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]))
+    let em2 = message.guild.emojis.find(emoji => emoji.name === "yes")
     let argsUser 
     if (member) argsUser = member.user
     else argsUser = message.author
