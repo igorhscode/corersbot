@@ -21,7 +21,9 @@ module.exports.run = async (bot,message,args) => {
     let bal = await db.fetch(`coins_${argsUser.id}`)
 
     let embed = new Discord.RichEmbed()
-    .setAuthor(`${em2} 🌞 Монеты уменьшились!`, message.author.displayAvatarURL)
+    .setAuthor(argsUser.username)
+    .setThumbnail(argsUser.avatarURL)
+    .setDescription(`${em2} 🌞 Монеты уменьшились!`)
     .addField("Игрок", argsUser.username)
     .addField(`Количество`, `${args[0]} 🌞 монет`)
     .addField(`Баланс обновился`, `${bal} 🌞 монет`)
