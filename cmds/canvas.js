@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
  
-    ctx.font = '65px Impact';
+    ctx.font = '65px Arial';
     ctx.fillStyle = '#ffffff';
     ctx.fillText(`Уровень: ${curlvl}`, canvas.width / 2.7, canvas.height / 1.5);
 
