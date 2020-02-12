@@ -10,6 +10,7 @@ module.exports.run = async (bot,message,args) => {
     .setColor([255,255,0])
     .setDescription(botmessage)
     .setImage('https://media.discordapp.net/attachments/635917406568710144/638343117140918283/-6.gif')
+    message.delete().catch();
     message.channel.send(embed);
 };
 module.exports.help = {
