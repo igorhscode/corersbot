@@ -15,12 +15,13 @@ module.exports.run = async (bot,message,args) =>{
     if(!rUser) return send(`${em1} Пользователь не найден`);
     if(rUser.hasPermission("MANAGE_MESSAGES"))
     return message.reply(`${em1} нее... Вы не можете дать ему игровое предупреждение!`);
+
     profile[rUser.id].gamewarns++;
     fs.writeFile('../profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
     });
     if(profile[rUser.id].warns >=3){
-        message.guild.member(rUser).kick("3/3 Игровых предупреждений!");
+        message.guild.member(rUser).kick("3/3 Предупреждений");
     rUser.addRole(role);
     }
     let embed = new Discord.RichEmbed()
