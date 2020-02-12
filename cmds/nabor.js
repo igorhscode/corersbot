@@ -22,6 +22,7 @@ let role1 = message.guild.roles.find(role => role.name === "・⚡️ › Sun Mo
     
     Вашу заявку рассмотрят, напишут в л\с и проведут собеседование! ♡`)
     .setImage("https://cdn.discordapp.com/attachments/575680577831698432/675426372570710016/-1.png")
+    message.delete().catch();
     bot.send(embed);
 };
 module.exports.help = {
