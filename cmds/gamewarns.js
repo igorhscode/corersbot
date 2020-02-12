@@ -9,6 +9,7 @@ module.exports.run = async (bot,message,args) =>{
     let em1 = message.guild.emojis.find(emoji => emoji.name === "animated_cross")
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${em1} У вас нет прав`);
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let role = message.guild.roles.find(r => r.name === "BanEvents");
 
     if(!args[0]) return send(`${em1} Вы не указали пользователя`);
     if(!rUser) return send(`${em1} Пользователь не найден`);
@@ -18,6 +19,10 @@ module.exports.run = async (bot,message,args) =>{
     fs.writeFile('../profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
     });
+    if(profile[rUser.id].warns >=3){
+        message.guild.member(rUser).kick("3/3 Игровых предупреждений");
+    rUser.addRole(role);
+    }
     let embed = new Discord.RichEmbed()
     .setAuthor(message.guild.name, message.guild.iconURL)
     .setDescription("Игровое предупреждение")
