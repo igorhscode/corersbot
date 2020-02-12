@@ -20,7 +20,7 @@ module.exports.run = async (bot,message,args) =>{
         if(err) console.log(err);
     });
     if(profile[rUser.id].warns >=3){
-        message.guild.member(rUser).kick("3/3 Игровых предупреждений");
+        message.guild.member(rUser).kick("3/3 Игровых предупреждений!");
     rUser.addRole(role);
     }
     let embed = new Discord.RichEmbed()
