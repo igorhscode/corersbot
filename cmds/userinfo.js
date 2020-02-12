@@ -38,7 +38,6 @@ module.exports.run = async (bot,message,args) => {
         .addField('Дата регистрации в дискорде', `${strftime(`%d.%m.%Y в %H:%M`, new Date(argsUser.createdTimestamp))}\n(${diff1} дн. назад)`, true)
         .addField('Впервые на сервере', `${strftime(`%d.%m.%Y в %H:%M`, new Date(message.guild.member(argsUser).joinedTimestamp))}\n(${diff2} дн. назад)`, true)
         .addField('Роли', message.guild.member(argsUser).roles.filter(r => r.id != message.guild.id).map(role => role).join(', ') || 'Не имеет')
-        .addField('Баланс', `${coins}`)
         .setColor(message.guild.member(argsUser).displayHexColor)
         .setTimestamp()
         .setThumbnail(argsUser.avatarURL)
