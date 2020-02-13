@@ -8,6 +8,7 @@ let c4 = message.guild.channels.find(channel => channel.name === "⟦🔖⟧ро
 let c6 = message.guild.channels.find(channel => channel.name === "⟦🎉⟧ивенты")
 let c8 = message.guild.channels.find(channel => channel.name === "⟦🍨⟧общий")
 let c9 = message.guild.channels.find(channel => channel.name === "⟦📪⟧спам")
+let voice = message.guild.channels.find(channel => channel.name === "⟦❔⟧голосование")
 let cc = message.guild.channels.find(channel => channel.name === "⟦💻⟧команды-сервера")
 let c10 = message.guild.channels.find(channel => channel.name === "⟦💻⟧bot-chat")
 let c11 = message.guild.channels.find(channel => channel.name === "⟦🎵⟧выбирай-песенку")
@@ -23,6 +24,7 @@ let c11 = message.guild.channels.find(channel => channel.name === "⟦🎵⟧в�
     ▸ ${c3} - публикация изменений на сервере.
     ▸ ${c4} - роли сервера
     ▸ ${c6} - анонсы ивентов сервера.
+    ▸ ${voice} - опросы игроков сервера.
 
     Каналы категории **чаты: **
 
