@@ -8,8 +8,10 @@ let inline = true;
 if(Ruser.hasPermission("ADMINISTRATOR"))
 return message.reply("нее... Вы не можете кинуть на него жалобу!");
  
-    if( !args.length) {
-        return message.channel.send("Вы не правильно оформили жалобу. Попробуйте так: `sun!report [ник] [причина]`")
+    if(!Rreason) {
+        return message.channel.send("Вы не правильно оформили валентинку. Попробуйте так: `sun!report [ник] [причина]`")
+    } else if(!Ruser) {
+        return message.channel.send("Вы не правильно оформили валентинку. Попробуйте так: `sun!report [ник] [причина]`")
     };
 let reportembed = new Discord.RichEmbed()
     .setFooter(`Жалобу отправил(а): ${ message.author.username}`)
