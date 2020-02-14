@@ -180,7 +180,7 @@ message.channel.send(temp)
       }
       let curxp = xp[message.author.id].xp;
       let curlvl = xp[message.author.id].level;
-      let nxtLvl = xp[message.author.id].level * 100;
+      let nxtLvl = xp[message.author.id].level * 500;
       xp[message.author.id].xp =  curxp + xpAdd;
       if(nxtLvl <= xp[message.author.id].xp){
         xp[message.author.id].level = curlvl + 1;
