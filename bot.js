@@ -169,7 +169,7 @@ message.channel.send(temp)
         if(err) console.log(err);
 
     });
-    let xpAdd = Math.floor(Math.random() * 7) + 8;
+    let xpAdd = Math.floor(Math.random() * 1) + 1;
     console.log(xpAdd);
 
     if(!xp[message.author.id]){
@@ -180,7 +180,7 @@ message.channel.send(temp)
       }
       let curxp = xp[message.author.id].xp;
       let curlvl = xp[message.author.id].level;
-      let nxtLvl = xp[message.author.id].level * 600;
+      let nxtLvl = xp[message.author.id].level * 100;
       xp[message.author.id].xp =  curxp + xpAdd;
       if(nxtLvl <= xp[message.author.id].xp){
         xp[message.author.id].level = curlvl + 1;
