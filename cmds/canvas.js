@@ -1,4 +1,3 @@
-
 const Discord = require("discord.js")
 const Canvas = require("canvas")
 const canvas = Canvas.createCanvas(1050, 250);
@@ -28,16 +27,16 @@ module.exports.run = async (bot, message, args) => {
     ctx.fillStyle = "#000000"
     ctx.fillRect(0,0,5000,5000)
 
-    const background = await Canvas.loadImage('https://sun9-29.userapi.com/c857436/v857436957/174a08/fR-sxydbNhQ.jpg');
+    const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/675337416974008340/677845648279863296/kkk.png');
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
  
-    ctx.font = '65px Arial';
+    ctx.font = '100px BOLD';
     ctx.fillStyle = '#ffffff';
-    ctx.fillText(`Уровень: ${curlvl}`, canvas.width / 2.7, canvas.height / 1.5);
+    ctx.fillText(`${curlvl}`, canvas.width / 1.37, canvas.height / 1.4);
 
     ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
     ctx.closePath();
