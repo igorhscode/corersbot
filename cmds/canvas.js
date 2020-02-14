@@ -8,17 +8,16 @@ let xp = require('../xp.json')
 const db =  require('quick.db')
 module.exports.run = async (bot, message, args) => {
 
-    if(!xp[message.author.id]){
-        xp[message.author.id] = {
-          xp: 0,
-          level: 1
-       };
-     }
-       let muser = message.author.id
-       let curxp = xp[message.author.id].xp;
-       let curlvl = xp[message.author.id].level;
-       let nxtLvlXp = curlvl * 300;
-       let difference = nxtLvlXp - curxp;
+  if(!xp[message.author.id]){
+   xp[message.author.id] = {
+     xp: 0,
+     level: 1
+  };
+}
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvlXp = curlvl * 400;
+  let difference = nxtLvlXp - curxp;
 
     
     fs.writeFile("../xp.json", JSON.stringify(xp), (err) => {
